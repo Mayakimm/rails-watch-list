@@ -9,8 +9,9 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.list = @list
     if @bookmark.save
-      redirect_to @list
+      redirect_to list_path(@list)
     else
+      puts @bookmark.errors.full_messages
       render :new
     end
   end
