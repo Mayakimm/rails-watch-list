@@ -4,3 +4,4 @@
 <%= link_to "Delete a bookmark", list_bookmark_path(@list, bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <% end %>
 <%= link_to "Add a bookmark", new_list_bookmark_path(@list) %>
+<%= cl_image_tag(@list.photo, crop: :fill) %>

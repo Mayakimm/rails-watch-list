@@ -1,2 +1,23 @@
 // Import page-specific CSS files here.
 @import "home";
+.banner {
+  height: 400px; /* You can adjust this height as needed */
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3Vwd2s2MjIxNDM0MC13aWtpbWVkaWEtaW1hZ2Uta293czQxMGguanBn.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  text-align: center;
+  color: white;
+}
+.card-item {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(@list.photo, crop: :fill) %>');
+  height: 150px;
+  width: 300px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
