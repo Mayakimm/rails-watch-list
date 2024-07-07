@@ -1,7 +1,17 @@
-<%= @list.name %>
-<% @list.bookmarks.each do |bookmark| %>
-<%= bookmark.comment %>
-<%= link_to "Delete a bookmark", list_bookmark_path(@list, bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-<% end %>
-<%= link_to "Add a bookmark", new_list_bookmark_path(@list) %>
-<%= cl_image_tag(@list.photo, crop: :fill) %>
+<div class="container">
+  <div class="banner-list" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path(@list.photo.key, crop: :fill) %>')">
+      <h1><%= @list.name %></h1>
+  </div>
+  <div class="mt-5">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="container border text-black p-5">
+        <%= bookmark.comment%>
+      </div>
+      <%= link_to "Delete a bookmark", list_bookmark_path(@list, bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <% end %>
+    <%= link_to "Add a bookmark", new_list_bookmark_path(@list) %>
+  </div>
+      <div class="btn btn-primary">
+        <%= link_to "Delete this list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"text-decoration-none text-white"%>
+      </div>
+</div>
