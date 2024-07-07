@@ -28,5 +28,3 @@ movies.each do |movie_data|
     rating: movie_data['vote_average'].round(1)
   )
 end
-
-List.create(name: "Horror")
